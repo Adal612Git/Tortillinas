@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tortismart.example.com/index.html</loc></url>
+  <url><loc>https://tortismart.example.com/productos.html</loc></url>
+  <url><loc>https://tortismart.example.com/nosotros.html</loc></url>
+  <url><loc>https://tortismart.example.com/contacto.html</loc></url>
+  <url><loc>https://tortismart.example.com/ubicaciones.html</loc></url>
+  <url><loc>https://tortismart.example.com/perfil.html</loc></url>
+  <url><loc>https://tortismart.example.com/carrito.html</loc></url>
+  <url><loc>https://tortismart.example.com/admin.html</loc></url>
+  <url><loc>https://tortismart.example.com/cajero.html</loc></url>
+  <url><loc>https://tortismart.example.com/repartidor.html</loc></url>
+</urlset>

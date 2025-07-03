@@ -2,13 +2,22 @@
  * Carga historial de pedidos para el perfil de usuario.
  * @module perfil
  */
-async function loadOrders() {
+function loadOrders() {
   const container = document.getElementById('orders');
   if (!container) return;
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?userId=1');
-  const orders = await res.json();
-  container.innerHTML = '<h2>Historial de pedidos</h2>' +
-    '<ul>' + orders.slice(0,5).map(o => `<li>Pedido #${o.id}: ${o.title}</li>`).join('') + '</ul>';
+  const orders = JSON.parse(localStorage.getItem('historialPedidos')) || [];
+  if (!orders.length) {
+    container.textContent = 'No hay pedidos en tu historial.';
+    return;
+  }
+  const list = document.createElement('ul');
+  orders.forEach((o, i) => {
+    const li = document.createElement('li');
+    li.textContent = `Pedido #${i + 1}: ${o.detalle}`;
+    list.appendChild(li);
+  });
+  container.innerHTML = '<h2>Historial de pedidos</h2>';
+  container.appendChild(list);
 }
 
 document.addEventListener('DOMContentLoaded', loadOrders);
