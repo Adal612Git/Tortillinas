@@ -3,7 +3,7 @@
  * Applies prefers-color-scheme and stores preference in localStorage.
  * @module theme
  */
-export function initThemeToggle() {
+function initThemeToggle() {
   const toggle = document.getElementById('theme-toggle');
   if (!toggle) return;
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;

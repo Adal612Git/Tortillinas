@@ -72,4 +72,3 @@ function addMarkers() {
 }
 
 window.initMap = initMap;
-export {};
