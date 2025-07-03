@@ -103,15 +103,21 @@ function updateCartCount() {
   if (countEl) countEl.textContent = carrito.size;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function setupCart() {
   updateCartCount();
-  document.querySelectorAll('.add-cart').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const { id, name, price } = btn.dataset;
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('add-cart')) {
+      const { id, name, price } = e.target.dataset;
       carrito.add({ id, name, price: Number(price) });
       updateCartCount();
-    });
+    }
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupCart);
+} else {
+  setupCart();
+}
 
 export { carrito };
