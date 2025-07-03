@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora nuestros productos de tortilla artesanales.">
   <title>Tortillas Artesanales - Productos</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"></noscript>
   <link rel="stylesheet" href="assets/normalize.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -25,6 +28,7 @@
         </ul>
       </nav>
       <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+      <label for="theme-toggle" id="theme-label" class="ms-1">Modo noche</label>
       <div class="cart"><a href="carrito.html" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></div>
     </div>
   </header>
@@ -35,36 +39,35 @@
         <div class="card">
           <img src="imagenes_scrap/000002.jpg" alt="Tortilla 1">
           <div class="card-body">
-            <h2 class="card-title">Tortilla Maíz Azul</h2>
-            <button class="add-cart" data-id="1" data-name="Tortilla Maíz Azul" data-price="15">Agregar al carrito</button>
+          <h2 class="card-title">Tortilla Maíz Azul <span class="badge bg-primary price-badge">$15</span></h2>
+          <button class="add-cart" data-id="1" data-name="Tortilla Maíz Azul" data-price="15">Agregar al carrito</button>
           </div>
         </div>
         <div class="card">
           <img src="imagenes_scrap/000003.jpg" alt="Tortilla 2">
           <div class="card-body">
-            <h2 class="card-title">Tortilla Maíz Blanco</h2>
-            <button class="add-cart" data-id="2" data-name="Tortilla Maíz Blanco" data-price="12">Agregar al carrito</button>
+          <h2 class="card-title">Tortilla Maíz Blanco <span class="badge bg-primary price-badge">$12</span></h2>
+          <button class="add-cart" data-id="2" data-name="Tortilla Maíz Blanco" data-price="12">Agregar al carrito</button>
           </div>
         </div>
         <div class="card">
           <img src="imagenes_scrap/000004.jpg" alt="Tortilla 3">
           <div class="card-body">
-            <h2 class="card-title">Tortilla Integral</h2>
-            <button class="add-cart" data-id="3" data-name="Tortilla Integral" data-price="10">Agregar al carrito</button>
-@@ -60,29 +62,30 @@
+          <h2 class="card-title">Tortilla Integral <span class="badge bg-primary price-badge">$10</span></h2>
+          <button class="add-cart" data-id="3" data-name="Tortilla Integral" data-price="10">Agregar al carrito</button>
         </div>
         <div class="card">
           <img src="imagenes_scrap/000006.jpg" alt="Tortilla 5">
           <div class="card-body">
-            <h2 class="card-title">Tortilla Especial</h2>
-            <button class="add-cart" data-id="5" data-name="Tortilla Especial" data-price="20">Agregar al carrito</button>
+          <h2 class="card-title">Tortilla Especial <span class="badge bg-primary price-badge">$20</span></h2>
+          <button class="add-cart" data-id="5" data-name="Tortilla Especial" data-price="20">Agregar al carrito</button>
           </div>
         </div>
         <div class="card">
           <img src="imagenes_scrap/000007.jpg" alt="Tortilla 6">
           <div class="card-body">
-            <h2 class="card-title">Tortilla Artesanal</h2>
-            <button class="add-cart" data-id="6" data-name="Tortilla Artesanal" data-price="22">Agregar al carrito</button>
+          <h2 class="card-title">Tortilla Artesanal <span class="badge bg-primary price-badge">$22</span></h2>
+          <button class="add-cart" data-id="6" data-name="Tortilla Artesanal" data-price="22">Agregar al carrito</button>
           </div>
         </div>
     </div>
@@ -80,5 +83,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/carrito.js"></script>
+  <script src="js/seo.js"></script>
 </body>
 </html>
