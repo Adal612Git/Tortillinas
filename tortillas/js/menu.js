@@ -6,3 +6,11 @@ if (toggleBtn) {
     navList.classList.toggle('open');
   });
 }
+
+if (navList) {
+  navList.addEventListener('click', e => {
+    if (e.target.tagName === 'A') {
+      navList.classList.remove('open');
+    }
+  });
+}
