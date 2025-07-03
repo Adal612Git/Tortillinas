@@ -147,6 +147,13 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCarrito);
 } else {
   initCarrito();
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupCart);
+} else {
+  setupCart();
 }
 
 window.carrito = carrito;
