@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tortillas Artesanales - Inicio</title>
+  <title>Dashboard Cajero</title>
   <link rel="stylesheet" href="assets/normalize.css">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
+<body data-dashboard="cajero">
   <header>
     <div class="container">
       <a href="index.html"><img src="imagenes_scrap/000001.jpg" alt="Logo Tortillas"></a>
@@ -29,10 +28,7 @@
   </header>
 
   <main class="container">
-    <section>
-      <h1>Bienvenido a Tortillas Artesanales</h1>
-      <p>Las mejores tortillas mexicanas hechas a mano.</p>
-    </section>
+    <div id="dashboard"></div>
   </main>
 
   <footer>
@@ -43,6 +39,13 @@
 
   <script src="js/menu.js"></script>
   <script src="js/theme.js" type="module"></script>
+  <script type="module">
+    import { createDashboard } from './js/dashboardFactory.js';
+    const container = document.getElementById('dashboard');
+    const type = document.body.dataset.dashboard;
+    const dash = createDashboard(type, container);
+    dash.render();
+  </script>
   <script type="module" src="js/carrito.js"></script>
 </body>
 </html>

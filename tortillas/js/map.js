@@ -1,7 +1,35 @@
 let map;
 const branches = [
-  { position: { lat: 19.4326, lng: -99.1332 }, title: 'Sucursal Ciudad de México' },
-  { position: { lat: 20.6597, lng: -103.3496 }, title: 'Sucursal Guadalajara' }
+  {
+    position: { lat: 19.4326, lng: -99.1332 },
+    title: 'Ciudad de México',
+    address: 'Centro CDMX',
+    hours: '9am - 9pm'
+  },
+  {
+    position: { lat: 20.6597, lng: -103.3496 },
+    title: 'Guadalajara',
+    address: 'Av. Juárez 1',
+    hours: '9am - 8pm'
+  },
+  {
+    position: { lat: 25.6866, lng: -100.3161 },
+    title: 'Monterrey',
+    address: 'Macroplaza',
+    hours: '8am - 8pm'
+  },
+  {
+    position: { lat: 21.1619, lng: -86.8515 },
+    title: 'Cancún',
+    address: 'Zona Hotelera',
+    hours: '10am - 7pm'
+  },
+  {
+    position: { lat: 32.5149, lng: -117.0382 },
+    title: 'Tijuana',
+    address: 'Av. Revolución',
+    hours: '9am - 9pm'
+  }
 ];
 
 function initMap() {
@@ -37,7 +65,8 @@ function loadDefault() {
 function addMarkers() {
   branches.forEach(branch => {
     const marker = new google.maps.Marker({ position: branch.position, map, title: branch.title });
-    const info = new google.maps.InfoWindow({ content: `<h3>${branch.title}</h3>` });
+    const content = `<h3>${branch.title}</h3><p>${branch.address}</p><p>${branch.hours}</p>`;
+    const info = new google.maps.InfoWindow({ content });
     marker.addListener('click', () => info.open(map, marker));
   });
 }
