@@ -39,7 +39,7 @@ class RepartidorDashboard extends Dashboard {
   }
 }
 
-export function createDashboard(type, container) {
+function createDashboard(type, container) {
   switch(type) {
     case 'admin':
       return new AdminDashboard(container);
@@ -51,3 +51,5 @@ export function createDashboard(type, container) {
       throw new Error('Tipo desconocido');
   }
 }
+
+window.createDashboard = createDashboard;
