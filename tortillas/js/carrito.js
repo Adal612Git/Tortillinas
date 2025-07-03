@@ -66,6 +66,16 @@ class Carrito {
     return total;
   }
 
+  totalQty() {
+    let total = 0;
+    let cur = this.head;
+    while (cur) {
+      total += cur.product.qty;
+      cur = cur.next;
+    }
+    return total;
+  }
+
   toArray() {
     const arr = [];
     let cur = this.head;
@@ -100,7 +110,7 @@ const carrito = new Carrito();
 
 function updateCartCount() {
   const countEl = document.getElementById('cart-count');
-  if (countEl) countEl.textContent = carrito.size;
+  if (countEl) countEl.textContent = carrito.totalQty();
 }
 
 function setupCart() {
