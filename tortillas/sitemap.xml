@@ -10,4 +10,6 @@
   <url><loc>https://tortismart.example.com/admin.html</loc></url>
   <url><loc>https://tortismart.example.com/cajero.html</loc></url>
   <url><loc>https://tortismart.example.com/repartidor.html</loc></url>
+  <url><loc>https://tortismart.example.com/blog.html</loc></url>
+  <url><loc>https://tortismart.example.com/login.html</loc></url>
 </urlset>

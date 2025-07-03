@@ -154,6 +154,10 @@ function placeOrder() {
   const detalle = carrito.toArray().map(p => `${p.name} x${p.qty}`).join(', ');
   historial.push({ detalle, fecha: new Date().toISOString() });
   localStorage.setItem('historialPedidos', JSON.stringify(historial));
+  if (window.orderQueue) {
+    window.orderQueue.enqueue({ detalle, fecha: new Date().toISOString() });
+    console.log('Cola de pedidos:', window.orderQueue.toArray());
+  }
   carrito.head = carrito.tail = null;
   carrito.size = 0;
   carrito.save();
