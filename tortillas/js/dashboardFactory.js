@@ -1,6 +1,6 @@
 /**
  * Factory Pattern for creating dashboards without code duplication.
- * Uses JSONPlaceholder to mock data.
+ * Utiliza datos locales almacenados en localStorage.
  * @module dashboardFactory
  */
 class Dashboard {
@@ -15,17 +15,15 @@ class Dashboard {
 class AdminDashboard extends Dashboard {
   async render() {
     await super.render();
-    const res = await fetch('https://jsonplaceholder.typicode.com/users');
-    const users = await res.json();
-    this.container.innerHTML = `<h2>Admin Dashboard</h2><ul>${users.slice(0,3).map(u => `<li>${u.name}</li>`).join('')}</ul>`;
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    this.container.innerHTML = `<h2>Admin Dashboard</h2><ul>${users.map(u => `<li>${u.role}: ${u.email}</li>`).join('')}</ul>`;
   }
 }
 
 class CashierDashboard extends Dashboard {
   async render() {
     await super.render();
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-    const orders = await res.json();
+    const orders = JSON.parse(localStorage.getItem('historialPedidos')) || [];
     this.container.innerHTML = `<h2>Cajero Dashboard</h2><p>Pedidos hoy: ${orders.length}</p>`;
   }
 }
@@ -33,9 +31,8 @@ class CashierDashboard extends Dashboard {
 class RepartidorDashboard extends Dashboard {
   async render() {
     await super.render();
-    const res = await fetch('https://jsonplaceholder.typicode.com/todos');
-    const tasks = await res.json();
-    this.container.innerHTML = `<h2>Repartidor Dashboard</h2><ul>${tasks.slice(0,5).map(t => `<li>${t.title}</li>`).join('')}</ul>`;
+    const orders = window.orderQueue ? window.orderQueue.toArray() : [];
+    this.container.innerHTML = `<h2>Repartidor Dashboard</h2><ul>${orders.map(o => `<li>${o.detalle}</li>`).join('')}</ul>`;
   }
 }
 
